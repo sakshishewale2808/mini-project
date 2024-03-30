@@ -5,11 +5,102 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calculator using DOM</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+       <style>
+        body{
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+            min-height:100vh;
+         }
+        .box-container{
+            background-color: #85FFBD;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #ff947d 100%);
+            width:300px;
+            border-radius:20px;
+            text-align:Center;
+            display:block;
+            margin:10px auto;
+            padding:10px;
+         }
+        .input{
+            display:block;
+           justify-content:center;
+           text-align:center;
+            margin:0 auto;
+            }
+       .btn{
+        background-color:#F7CE68;
+        border:0.1px solid black;
+        border-radius:5px;
+        margin:5px;
+        font-size:10px;
+        text-align:Center;
+        justify-content:center;
+        cursor:pointer;
+    }
+       .btn:hover{
+        border-radius:5px;
+        transform:scale(1.25);
+    }
+        .reset{
+            display:block;
+            text-align:center;
+            margin:0 auto;
+            border-radius:20px;
+            width:100px;
+            margin-top:20px;
+            background-color:black;
+            color:white;
+        }
+        @media screen and (max-width:760px){
+            .box-container{
+                width:50%;
+            }
+        }
+       </style>
+
     </head>
     <body>
+        <div class="box-container">
+        <input class="input" type="text" placeholder= "Enter side of square" id="inputtext" />
+        <h3 id="calculate">Calculate :</h3>
+        <button type="button" class="btn" onclick="areaofsquare()">Area of square</button>
+        <button type="button" class="btn" onclick="perimeterofsquare()">Perimeter of square</button>
+        <button type="button" class="btn" onclick="diagonalofsquare()">Diagonal of square</button>
+        <button class="reset" onclick="blank()">Reset</button>
+        </div>
+
+        <script>
+            function areaofsquare(){
+                const input1 = parseInt(document.getElementById("inputtext").value);
+                const area =(3.14*input1*input1)
+                const ansElement = document.getElementById("calculate");
+              ansElement.innerText =`Area of square: ${area}`; 
+
+            }
+            function perimeterofsquare(){
+                const input1 = parseInt(document.getElementById("inputtext").value);
+                const perimeter = (4*input1)
+                const ansElement = document.getElementById("calculate");
+                ansElement.innerText=`Perimeter of square : ${perimeter}`;
+
+            }
+            function diagonalofsquare(){
+                const input1 = parseInt(document.getElementById("inputtext").value);
+                const diagonal = (Math.sqrt(2)*input1)
+                const ansElement = document.getElementById("calculate");
+                ansElement.innerText=`Diagonal of square: ${diagonal}`;
+
+
+            }
+            function blank(){
+               const input1 = document.getElementById("inputText");
+               const ansElement = document.getElementById("calculate");
+
+               input1.innerText="";
+               ansElement.innerText="";
+            }
+
+        </script>
        
         
        
