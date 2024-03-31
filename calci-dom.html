@@ -66,7 +66,7 @@
         <button type="button" class="btn" onclick="areaofsquare()">Area of square</button>
         <button type="button" class="btn" onclick="perimeterofsquare()">Perimeter of square</button>
         <button type="button" class="btn" onclick="diagonalofsquare()">Diagonal of square</button>
-        <button class="reset" onclick="blank()">Reset</button>
+        <button class="reset" onclick="reset()">Reset</button>
         </div>
 
         <script>
@@ -74,30 +74,30 @@
                 const input1 = parseInt(document.getElementById("inputtext").value);
                 const area =(3.14*input1*input1)
                 const ansElement = document.getElementById("calculate");
-              ansElement.innerText =`Area of square: ${area}`; 
+              ansElement.innerText =`Area of square: ${area} unit squ`; 
 
             }
             function perimeterofsquare(){
                 const input1 = parseInt(document.getElementById("inputtext").value);
                 const perimeter = (4*input1)
                 const ansElement = document.getElementById("calculate");
-                ansElement.innerText=`Perimeter of square : ${perimeter}`;
+                ansElement.innerHTML=`Perimeter of square : ${perimeter}m `;
 
             }
             function diagonalofsquare(){
                 const input1 = parseInt(document.getElementById("inputtext").value);
                 const diagonal = (Math.sqrt(2)*input1)
                 const ansElement = document.getElementById("calculate");
-                ansElement.innerText=`Diagonal of square: ${diagonal}`;
+                ansElement.innerHTML=`Diagonal of square: ${diagonal}m`;
 
 
             }
-            function blank(){
-               const input1 = document.getElementById("inputText");
+            function reset(){
+               const input1 = document.getElementById("inputtext");
                const ansElement = document.getElementById("calculate");
 
-               input1.innerText="";
-               ansElement.innerText="";
+               input1.value= "";
+               ansElement.innerText= "";
             }
 
         </script>
