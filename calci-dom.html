@@ -9,15 +9,19 @@
         body{
             background-color: #00DBDE;
             background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-            min-height:100vh;
+            max-height:100vh;
          }
-        .box-container{
+        .calc-container{
             background-color: #85FFBD;
             background-image: linear-gradient(45deg, #85FFBD 0%, #ff947d 100%);
-            max-width:80%;
+            max-width:600px;
+            max-height:80%;
+           display:flex;
+           flex-direction:column;
             border-radius:20px;
-            text-align:Center;
-            display:block;
+           
+            justify-content:center;
+           
             margin:10px auto;
             padding:10px;
          }
@@ -31,11 +35,12 @@
         background-color:#F7CE68;
         border:0.1px solid black;
         border-radius:5px;
-        margin:5px;
+        margin:5px auto;
         font-size:10px;
         text-align:Center;
-        justify-content:center;
+       padding:5px 10px;
         cursor:pointer;
+        width:30%;
     }
        .btn:hover{
         border-radius:5px;
@@ -51,16 +56,24 @@
             background-color:black;
             color:white;
         }
-        @media screen and (max-width:760px){
-            .box-container{
-                width:50%;
-            }
+        #calculate{
+            text-align:center;
         }
+        @media screen and (max-width:760px){
+            .calc-container{
+                max-width:80%;
+                height:800px;              
+               
+            }
+
+        }
+       
+
        </style>
 
     </head>
     <body>
-        <div class="box-container">
+        <div class="calc-container">
         <input class="input" type="text" placeholder= "Enter side of square" id="inputtext" />
         <h3 id="calculate">Calculate :</h3>
         <button type="button" class="btn" onclick="areaofsquare()">Area of square</button>
