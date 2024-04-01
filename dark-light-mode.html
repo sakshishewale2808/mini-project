@@ -16,7 +16,8 @@
             .active{
                 border:1px solid black;
                 border-radius:5px;
-                padding:3px;
+                padding:10px;
+                background-color:gray;
             }
             .content{
                 display:flex;
@@ -27,20 +28,29 @@
             }
             .dark-theme{
                 color:white;
-                background-color:black;
+                background-image:url(./../imgs/bg.jpg);
+                background-size:cover;
+                background-attachment:fixed;
+                background-repeat:no-repeat;
 
             }
             .light-theme{
                 color:black;
-                background-color:white;
+                background-image:url(./../imgs/sunrise.avif);
+                background-size:cover;
+                background-attachment:fixed;
+                background-repeat:no-repeat;
+
 
             }
+           
         </style>
     </head>
     <body id="body">
        <img class="active" src="./../imgs/dark-mode.png" onclick="darkmode()" id="img-dark" height="50"/>
-       <img  class="active" src="./../imgs/light-mode.png" onclick="lightmode()" id="img-light" height="50"/>
-       <div class="content">
+       <img  class="active" src="./../imgs/sun.png" onclick="lightmode()" id="img-light" height="50"/>
+       <div class="content" >
+**************<br/>
 I see the moon<br/>
 The moon sees me<br/>
 God bless the moon<br/>
@@ -60,6 +70,7 @@ I know an angel<br/>
 Watches over me.<br/>
 God bless the angels,<br/>
 And God bless me.<br/>
+*****************
 
        </div>
        <script>
@@ -68,7 +79,7 @@ And God bless me.<br/>
             darkmode.classList.add("active");
 
             const lightmode = document.getElementById("img-light");
-            darkmode.classList.remove("active"); 
+            lightmode.classList.remove("active"); 
 
             const bodytheme = document.getElementById("body");
             bodytheme.className = "dark-theme";
@@ -76,10 +87,10 @@ And God bless me.<br/>
         }
         function lightmode(){
             const lightmode = document.getElementById("img-light");
-            darkmode.classList.remove("active");
+            lightmode.classList.add("active");
 
-            const lightmode = document.getElementById("img-light");
-            darkmode.classList.add("active"); 
+            const darkmode = document.getElementById("img-dark");
+            darkmode.classList.remove("active"); 
 
             const bodytheme = document.getElementById("body");
             bodytheme.className = "light-theme";
