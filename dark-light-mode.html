@@ -8,9 +8,86 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            img{
+                margin:2px 10px;
+                cursor:pointer;
+            }
+            .active{
+                border:1px solid black;
+                border-radius:5px;
+                padding:3px;
+            }
+            .content{
+                display:flex;
+                height:200px;
+                width:300px;
+                font-size:20px;
+                margin:0 auto;
+            }
+            .dark-theme{
+                color:white;
+                background-color:black;
+
+            }
+            .light-theme{
+                color:black;
+                background-color:white;
+
+            }
+        </style>
     </head>
-    <body>
-       
+    <body id="body">
+       <img class="active" src="./../imgs/dark-mode.png" onclick="darkmode()" id="img-dark" height="50"/>
+       <img  class="active" src="./../imgs/light-mode.png" onclick="lightmode()" id="img-light" height="50"/>
+       <div class="content">
+I see the moon<br/>
+The moon sees me<br/>
+God bless the moon<br/>
+and God bless me<br/><br/>
+
+I see the stars<br/>
+The stars see me<br/>
+God bless the stars<br/>
+and God bless me<br/><br/>
+
+I see the world.<br/>
+The world sees me.<br/>
+God bless the world,<br/>
+And God bless me.<br/><br/>
+
+I know an angel<br/>
+Watches over me.<br/>
+God bless the angels,<br/>
+And God bless me.<br/>
+
+       </div>
+       <script>
+        function darkmode(){
+            const darkmode = document.getElementById("img-dark");
+            darkmode.classList.add("active");
+
+            const lightmode = document.getElementById("img-light");
+            darkmode.classList.remove("active"); 
+
+            const bodytheme = document.getElementById("body");
+            bodytheme.className = "dark-theme";
+          
+        }
+        function lightmode(){
+            const lightmode = document.getElementById("img-light");
+            darkmode.classList.remove("active");
+
+            const lightmode = document.getElementById("img-light");
+            darkmode.classList.add("active"); 
+
+            const bodytheme = document.getElementById("body");
+            bodytheme.className = "light-theme";
+          
+
+        }
+       </script>
+
         
        
     </body>
