@@ -112,6 +112,38 @@
 
       </div>
     </div>
+    <script>
+        let quantitytext = document.getElementById("quantityy");
+        let total = document.getElementById("total");
+        let one = document.getElementById("one");
+
+        function inc(){
+            let quantity = parseInt(one.innerText);
+            if(quantity<10){
+              one.innerText = ++quantity;
+            }
+            else{
+
+                alert("Can't cart more than this")
+            }
+            settotalamout(quantity);
+        }
+        function dec(){
+            let quantity = parseInt(one.innerText);
+            if(quantity>1){
+                one.innerText = --quantity;
+            }
+            else{
+                alert("Not less than one quantity!")
+            }
+            settotalamout(quantity);
+        }
+        function  settotalamout(quantity){
+         quantityy.innerText = `${quantity} x 139`;
+         total.innerText = `Total:${quantity * 139}`;
+        }
+
+    </script>
     
     </body>
 </html>
