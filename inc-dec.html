@@ -7,9 +7,111 @@
         <title>Card for Increment and Decrement</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+       <style>
+        body{
+            background-color:#c3ced9;
+        }
+        .bottle{
+            background-color:#c3ced9;
+            width:320px;
+            margin:5px 15px;
+            border-radius:10px;
+        }
+        h1{
+            margin:0 23px;
+          
+        }
+        h2{
+            margin:0 20px;
+        
+        }
+        .des{
+            font-size:20px;
+            margin:15px;
+        }
+        button{
+            border-radius:15px;
+            padding:7px;
+            font-size:20px;
+            width:120px;
+            margin:7px 100px;
+            background-color: #0a1424;
+            color:white;
+            box shadow:1px 1px 2px #545f70;
+           
+                        
+        }
+        .container{
+            
+            display:block;
+            margin:10px auto;
+            justify-content:center;
+            text-align:center;
+            background-color:white;
+            border:1px solid black;
+            border-radius:20px;
+            box-shadow:1px 1px 2px black;
+            width:350px;
+            height:500px;
+            background-color:#717d8f;
+            box-shadow:1px 1px 12px #021530;
+        }
+        .id{
+            display:flex;
+            flex-direction:row;
+            margin:auto -80px;
+        }
+        .minus{
+        margin:25px 120px;
+
+
+        }
+        .plus{
+            margin:20px 115px;
+        }
+        .one{
+            margin:30px -117px;
+            font-size:25px;
+        }
+        .price{
+            margin:auto 20px;
+            font-size:20px;
+          
+        }
+        .flex{
+            display:flex;
+        }
+
+       </style>
     </head>
     <body>
-      
+        <div class="container">
+          <img class="bottle" src="./../imgs/bottle.png" height="200" alt="bottle"/>
+           <div class="description">
+             <h1>Reusable Water bottle
+
+             </h1>
+        <p class="des">Less cost and pure water bottle with taking care of you..!
+
+        </p>
+        <h2><del>₹199</del>&ensp;Only ₹139
+        </h2>
+        <div class="flex">
+            <div class="price" id="quantityy">1 x 139</div>
+            <div class="price" id="total">Total:139</div>
+     <div class="id">
+            <img class="minus" src="./../imgs/minus.png" height="35" onclick="dec()">
+            <span class="one" id="one">1 </span>
+            <img class="plus" src="./../imgs/add.png" height="45" onclick="inc()">
+
+    </div>
+        </div>
+           <button type="button">Buy Now
+
+           </button>
+
+      </div>
+    </div>
+    
     </body>
 </html>
