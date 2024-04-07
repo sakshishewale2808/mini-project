@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 30</title>
+    <style>
+        body{
+          
+            background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .app-title{
+            text-align: center;
+            padding-top: 40px;
+        }
+        .dice{
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 30px auto;
+        }
+        .btn{
+            width: 200px;
+            display: block;
+            margin: 20px auto;
+            font-size: 25px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            color: white;
+            cursor: pointer;
+        }
+        @keyframes roll{
+            0%{
+                transform:rotate(0)
+            }
+            100%{
+                transform:rotate(360deg)
+            }
+        }
+        .animation{
+            animation:roll is infinite;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="app-title"> Roll the Dice</h1>
+        <img src="./../imgs/diceroll.png" alt="Dice" class="dice" id="dice-img"/>
+        <button class="btn" onclick="roll()">Roll Dice</button>
+    </div>
+    <script>
+        function roll(){
+            const min = 1;
+            const max = 6;
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+            const imgElement = document.getElementById('dice-img');
+            switch(randomNumber){
+                case 1:
+                    imgElement.src = './../imgs/1.png';
+                    break;
+                case 2:
+                    imgElement.src = './../imgs/2.png';
+                    break;
+                case 3:
+                    imgElement.src = './../imgs/3.png';
+                    break;
+                case 4:
+                    imgElement.src = './../imgs/4.png';
+                    break;
+                case 5:
+                    imgElement.src = './../imgs/5.png';
+                    break;
+                case 6:
+                    imgElement.src = './../imgs/6.png';
+                    break;
+            }
+        }
+        imgElement.classList.add("animation");
+        setTimeOut(()=>imgElement.classList.remove("animation"),1000)
+        
+    </script>
+</body>
+</html>
